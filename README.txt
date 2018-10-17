@@ -49,3 +49,6 @@ Run Instructions for Windows
 	http-server -a localhost -p 8000 -c-1	
 4. run app from localhost
 	http://localhost:8000/Jerry-isometric-rpg/
+	
+This game can also be tested live from my itch.io page:
+https://jerryartist.itch.io/urban-survivor
