@@ -20,6 +20,13 @@ var game = {
 
         // set all ressources to be loaded
         me.loader.preload(game.resources, this.loaded.bind(this));
+
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'game',
+          eventAction: 'onload',
+          eventLabel: 'onloadDetail'
+        });
     },
 
 

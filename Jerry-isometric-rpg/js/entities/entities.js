@@ -300,6 +300,13 @@ game.BuildingEntity = me.Entity.extend(
       if (inventory["vehicle"]) {
         achievements["acquire-vehicle"] = 1;
         panelText += "You have acquired a vehicle for transportation.  Congratulations you unlocked the second achievement!";
+
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'achievement',
+          eventAction: 'acquire-vehicle',
+          eventLabel: 'true'
+        });
       } else {
         panelText += "Maybe you can acquire a vehicle for transportation if you could produce fuel somehow.";
       }
@@ -371,8 +378,14 @@ game.BuildingEntity = me.Entity.extend(
           And to complete the setup you connect the charged battery to the radio and the tape recorder.\
           You have now created a communications platform and unlocked the third achievement!";
 
-          me.audio.play("positive");
+        me.audio.play("positive");
 
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'achievement',
+          eventAction: 'setup-communications-platform',
+          eventLabel: 'true'
+        });
       } else {
         panelText += "The tallest building in the city would be a good location to setup a communications platform.\
         You'll have to explore the city to find radio equipment for this.";
@@ -459,6 +472,14 @@ game.BuildingEntity = me.Entity.extend(
         panelText += "You start the generator and charge the car battery.";
 
         me.audio.play("positive");
+
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'achievement',
+          eventAction: 'restore-power-at-hospital',
+          eventLabel: 'true'
+        });
+
       } else if (inventory["diesel-fuel"]) {
         panelText += "You start the generator with your diesel fuel.";
       } else {
